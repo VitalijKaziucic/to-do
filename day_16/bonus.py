@@ -40,8 +40,10 @@ while 1:
             folder = values["-folder-"]
             if files and folder:
                 archive_files(folder=folder, files=files)
-                window["-zip-"].update("Compression was completed!")
+                window["-zip-"].update("Compression was completed!", text_color="green")
                 window["-files-"].update("")
                 window["-folder-"].update("")
+            else:
+                window["-zip-"].update("Check Input", text_color="red")
 
 window.close()
